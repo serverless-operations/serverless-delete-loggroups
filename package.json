@@ -1,6 +1,6 @@
 {
   "name": "serverless-delete-loggroups",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Delete all Loggroups for Breaking change of Serverlessv1.5",
   "repository": "https://github.com/horike37/serverless-delete-loggroups",
   "main": "index.js",
@@ -10,6 +10,7 @@
   "author": "horike37",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.4"
+    "bluebird": "^3.4.0",
+    "lodash": "^4.13.1"
   }
 }
