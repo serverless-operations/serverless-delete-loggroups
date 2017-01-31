@@ -17,7 +17,7 @@ plugins:
 ```
 
 ## Command
-LogGroups are deletes as follow:
+LogGroups are deleted as follow:
 
 ```
 $ sls remove logs
