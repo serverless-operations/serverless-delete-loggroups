@@ -1,0 +1,15 @@
+{
+  "name": "serverless-delete-loggroups",
+  "version": "0.1.0",
+  "description": "Delete all Loggroups for Breaking change of Serverlessv1.5",
+  "repository": "https://github.com/horike37/serverless-delete-loggroups",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "horike37",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
