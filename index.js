@@ -48,7 +48,7 @@ class ServerlessDeleteLoggroups {
     return BbPromise.map(logGroupNames, (value) => this.removeLogGroup(value))
     .then(() => {
       this.serverless.cli.log('Finish to delete all logGroups in serverless.yml');
-      BbPromise.resolve()
+      return BbPromise.resolve();
     });
   }
 
