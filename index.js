@@ -61,9 +61,7 @@ class ServerlessDeleteLoggroups {
       this.options.stage,
       this.options.region)
     .then(() => BbPromise.resolve())
-    .catch((error) => {
-      throw new this.serverless.classes.Error(error.message);
-    });
+    .catch(() => BbPromise.resolve());
   }
 }
 module.exports = ServerlessDeleteLoggroups;
