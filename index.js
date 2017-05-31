@@ -33,7 +33,7 @@ class ServerlessDeleteLoggroups {
         },
       },
     };
-    
+
     this.hooks = {
       'remove:logs:remove': () => BbPromise.bind(this)
         .then(this.removeLogGroups),
@@ -47,7 +47,7 @@ class ServerlessDeleteLoggroups {
     });
     return BbPromise.map(logGroupNames, (value) => this.removeLogGroup(value))
     .then(() => {
-      this.serverless.cli.log('Finish to delete all logGroups in serverless.yml');
+      this.serverless.cli.log('Finished');
       return BbPromise.resolve();
     });
   }
@@ -60,8 +60,14 @@ class ServerlessDeleteLoggroups {
       },
       this.options.stage,
       this.options.region)
-    .then(() => BbPromise.resolve())
-    .catch(() => BbPromise.resolve());
+    .then(() => {
+        this.serverless.cli.log(`Successfully removed logGroup ${name}`);
+        return BbPromise.resolve()
+    })
+    .catch((e) => {
+        this.serverless.cli.log(`Failed to remove logGroup ${name}: ${e.message}`);
+        return BbPromise.resolve()
+    });
   }
 }
 module.exports = ServerlessDeleteLoggroups;
