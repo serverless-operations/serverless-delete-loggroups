@@ -23,10 +23,12 @@ class ServerlessDeleteLoggroups {
               stage: {
                 usage: 'Stage of the service',
                 shortcut: 's',
+                type: 'string,
               },
               region: {
                 usage: 'Region of the service',
                 shortcut: 'r',
+                type: 'string,
               },
             },
           },
